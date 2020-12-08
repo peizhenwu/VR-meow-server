@@ -37,6 +37,6 @@ app.get('/feedSpecial', (req, res) => {
     res.json();
 });
 
-app.listen(2020, () => {
+app.listen(process.env.PORT, () => {
     console.log('server is listening on port 2020');
 });
