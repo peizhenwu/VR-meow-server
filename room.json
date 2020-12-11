@@ -1,1 +1,17 @@
-{"boxPosX":0,"boxPosZ":0,"cans":1,"displayDecor":false,"indivState1":"none","indivState2":"none","indivState3":"none","state":"none"}
+{
+    "cans": 2,
+    "treePosX": 4.862221846814653,
+    "treePosZ": 9.778883432636066,
+    "displayTree": true,
+    "boardPosX": -5.792897041517102,
+    "boardPosZ": 6.122695515413833,
+    "displayBoard": true,
+    "elephantPosX": -2.9038631649793847,
+    "elephantPosZ": 6.743678731002079,
+    "displayElephant": true,
+    "indivState1": "none",
+    "indivState2": "none",
+    "indivState3": "none",
+    "state": "none",
+    "feedSpecialCount": 3
+}
