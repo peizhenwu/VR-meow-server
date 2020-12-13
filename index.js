@@ -144,6 +144,23 @@ app.get('/updateCans', (req, res) => {
     res.json();
 });
 
+app.get('/updateCansAvail', (req, res) => {
+    let rawdata = fs.readFileSync('room.json');
+    let room = JSON.parse(rawdata);
+    room.cansAvailable = parseFloat(req.query.cansAvailable);
+    let data = JSON.stringify(room);
+    fs.writeFileSync('room.json', data);
+    res.json();
+});
+
+app.get('/updateFishAvail', (req, res) => {
+    let rawdata = fs.readFileSync('room.json');
+    let room = JSON.parse(rawdata);
+    room.fishAvailable = parseFloat(req.query.fishAvailable);
+    let data = JSON.stringify(room);
+    fs.writeFileSync('room.json', data);
+    res.json();
+});
 
 app.listen(process.env.PORT, () => {
 });
