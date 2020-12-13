@@ -139,6 +139,7 @@ app.get('/updateCans', (req, res) => {
     let rawdata = fs.readFileSync('room.json');
     let room = JSON.parse(rawdata);
     room.cans = parseFloat(req.query.cans);
+    room.cansAvailable -= 1;
     let data = JSON.stringify(room);
     fs.writeFileSync('room.json', data);
     res.json();
