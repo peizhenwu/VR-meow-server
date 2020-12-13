@@ -13,5 +13,7 @@
     "indivState2": "none",
     "indivState3": "none",
     "state": "none",
-    "feedSpecialCount": 3
+    "feedSpecialCount": 3,
+    "cansAvailable": 5,
+    "fishAvailable": 5
 }
