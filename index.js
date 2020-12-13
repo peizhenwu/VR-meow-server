@@ -26,6 +26,7 @@ app.get('/feedSpecial', (req, res) => {
     let room = JSON.parse(rawdata);
     room.state = "feedSpecial";
     room.feedSpecialCount += 1;
+    room.fish -= 1;
     let data = JSON.stringify(room);
     fs.writeFileSync('room.json', data);
 
@@ -145,23 +146,16 @@ app.get('/updateCans', (req, res) => {
     res.json();
 });
 
-app.get('/updateCansAvail', (req, res) => {
+app.get('/updateFish', (req, res) => {
     let rawdata = fs.readFileSync('room.json');
     let room = JSON.parse(rawdata);
-    room.cansAvailable = parseFloat(req.query.cansAvailable);
+    room.fish = parseFloat(req.query.fish);
+    room.fishAvailable = parseFloat(req.query.fishAvail);
     let data = JSON.stringify(room);
     fs.writeFileSync('room.json', data);
     res.json();
 });
 
-app.get('/updateFishAvail', (req, res) => {
-    let rawdata = fs.readFileSync('room.json');
-    let room = JSON.parse(rawdata);
-    room.fishAvailable = parseFloat(req.query.fishAvailable);
-    let data = JSON.stringify(room);
-    fs.writeFileSync('room.json', data);
-    res.json();
-});
 
 app.listen(process.env.PORT, () => {
 });
