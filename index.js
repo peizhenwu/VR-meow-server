@@ -82,7 +82,7 @@ app.get('/feedWet', (req, res) => {
 app.get('/displayTree', (req, res) => {
     let rawdata = fs.readFileSync('room.json');
     let room = JSON.parse(rawdata);
-    room.displayTree = true;
+    room.displayTree = !room.displayTree;
     let data = JSON.stringify(room);
     fs.writeFileSync('room.json', data);
     res.json();
