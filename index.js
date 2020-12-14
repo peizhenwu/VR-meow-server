@@ -156,6 +156,22 @@ app.get('/updateFish', (req, res) => {
     res.json();
 });
 
+app.get('/reset', (req, res) => {
+    let rawdata = fs.readFileSync('room.json');
+    let room = JSON.parse(rawdata);
+    room.displayTree = false;
+    room.displayBoard = false;
+    room.displayElephant = false;
+    room.feedSpecialCount = 0;
+    room.cans = 2;
+    room.fish = 2;
+    room.cansAvailable = 5;
+    room.cansAvailable = 5;
+    let data = JSON.stringify(room);
+    fs.writeFileSync('room.json', data);
+    res.json();
+});
+
 
 app.listen(process.env.PORT, () => {
 });
