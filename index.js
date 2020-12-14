@@ -166,7 +166,7 @@ app.get('/reset', (req, res) => {
     room.cans = 2;
     room.fish = 2;
     room.cansAvailable = 5;
-    room.cansAvailable = 5;
+    room.fishAvailable = 5;
     let data = JSON.stringify(room);
     fs.writeFileSync('room.json', data);
     res.json();
